@@ -69,11 +69,7 @@ func (h *Handler) GetTaskListHandler(w http.ResponseWriter, r *http.Request) {
 
 func (h *Handler) GetTaskByIdHandler(w http.ResponseWriter, r *http.Request) {
 	vars := mux.Vars(r)
-	idStr, exists := vars["id"]
-	if !exists {
-		http.Error(w, "ID задачи не указан", http.StatusBadRequest)
-		return
-	}
+	idStr := vars["id"]
 
 	id, err := strconv.Atoi(idStr)
 	if err != nil {
@@ -98,11 +94,7 @@ func (h *Handler) GetTaskByIdHandler(w http.ResponseWriter, r *http.Request) {
 
 func (h *Handler) UpdateTaskByIdHandler(w http.ResponseWriter, r *http.Request) {
 	vars := mux.Vars(r)
-	idStr, exists := vars["id"]
-	if !exists {
-		http.Error(w, "ID задачи не указан", http.StatusBadRequest)
-		return
-	}
+	idStr := vars["id"]
 
 	id, err := strconv.Atoi(idStr)
 	if err != nil {
@@ -150,11 +142,7 @@ func (h *Handler) UpdateTaskByIdHandler(w http.ResponseWriter, r *http.Request) 
 
 func (h *Handler) DeleteTaskByIdHandler(w http.ResponseWriter, r *http.Request) {
 	vars := mux.Vars(r)
-	idStr, exists := vars["id"]
-	if !exists {
-		http.Error(w, "ID задачи не указан", http.StatusBadRequest)
-		return
-	}
+	idStr := vars["id"]
 
 	id, err := strconv.Atoi(idStr)
 	if err != nil {
