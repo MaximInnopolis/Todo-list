@@ -16,6 +16,7 @@ import (
 
 func main() {
 
+	// Create config
 	cfg, err := config.New()
 	if err != nil {
 		fmt.Println(err)
